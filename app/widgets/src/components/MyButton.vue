@@ -1,9 +1,11 @@
 <template>
-  <button :class="['btn', variant]">{{ label }}</button>
+  <button :class="['btn', variant]">
+    <slot>{{ label }}</slot>
+  </button>
 </template>
 <script setup>
 const props = defineProps({
-  label: String,
+  label: { type: String, default: "Button" },
   variant: { type: String, default: "primary" }
 });
 </script>

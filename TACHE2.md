@@ -78,3 +78,42 @@ Dans le composant, on utilise la prop label :
   };
 </script>
 ```
+
+## TODO 2.5
+
+Donner une valeur par défaut au label.
+
+```ls
+const props = defineProps({
+  label: { type: String, default: "Button" },
+  variant: { type: String, default: "primary" }
+});
+```
+
+### Question 2.6
+
+Comment modifier le composant pour qu’il prenne en charge l'écriture suivante ?
+
+```html
+<div id="mon-bouton" data-variant="primary">Pomme</div>
+```
+
+C'est-à-dire comment prendre en compte la valeur à l’intérieur du composant, ici “Pomme”.
+
+> Il faut ajouter un _slot_ au composant :
+
+```html
+<template>
+  <button :class="['btn', variant]">
+    <slot>{{ label }}</slot>
+  </button>
+</template>
+```
+
+On l'utilise comme ceci :
+
+```html
+<MyButton>
+  <span>Mon <b>Contenu</b></span>
+</MyButton>
+```
