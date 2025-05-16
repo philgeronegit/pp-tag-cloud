@@ -1,33 +1,23 @@
 <?php
 
-exit('fin');
+require_once 'BaseController.php';
 
-class TagController
+class TagController extends BaseController
 {
-
-    public function __construct($toto)
-    {
-        echo "Je suis dans le controlleur Tag action : " . $toto;
-
-        switch ($toto) {
-            case "index":
-                $this->index();
-                break;
-            case "show":
-                $this->show();
-                break;
-            default:
-                echo "404";
-                break;
-        }
-    }
-    public function index()
-    {
-        echo "Liste de tous les tags";
+    public function __construct(string $action) {
+        parent::__construct($action);
     }
 
-    public function show()
-    {
-        echo "Untag";
+    public function index(): array {
+        $this->setView(__DIR__ . '/../views/tags/index.php');
+        return ['tags' => [
+            ['id' => 1, 'text' => 'Tag 1'],
+            ['id' => 2, 'text' => 'Tag 2']
+        ]];
+    }
+
+    public function show($id): array {
+        $this->setView(__DIR__ . '/../views/tags/show.php');
+        return ['tag' => ['id' => $id, 'text' => "Un Tag avec l'ID $id"]];
     }
 }

@@ -1,33 +1,22 @@
-
-
 <?php
 
-class NoteController{
-    public function __construct($action)
-    {
-        echo "Je suis dans le controlleur Note action : " . $action;
+require_once 'BaseController.php';
 
-        switch ($action) {
-            case "index":
-                $this->index();
-                break;
-            case "show":
-                $this->show();
-                break;
-            default:
-                echo "404";
-                break;
-        }
-    }
-    public function index()
-    {
-        echo "Liste de toutes les notes";
+class NoteController extends BaseController {
+    public function __construct(string $action) {
+        parent::__construct($action);
     }
 
-    public function show($id)
-    {
-        echo "uneNote";
+    protected function index(): array {
+      $this->setView(__DIR__ . '/../views/notes/index.php');
+      return ['notes' => [
+        ['id' => 1, 'text' => 'Note 1'],
+        ['id' => 2, 'text' => 'Note 2']
+      ]];
+    }
+
+    protected function show($id): array {
+        $this->setView(__DIR__ . '/../views/notes/show.php');
+        return ['note' => ['id' => $id, 'text' => "Une Note avec l'ID $id"]];
     }
 }
-
-?>
