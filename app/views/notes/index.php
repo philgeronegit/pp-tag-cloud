@@ -1,3 +1,7 @@
+<?php
+global $notes;
+?>
+
 <h2>Notes</h2>
 <ul>
     <?php foreach ($notes as $note): ?>

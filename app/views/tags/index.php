@@ -1,3 +1,7 @@
+<?php
+global $tags;
+?>
+
 <h2>Tags</h2>
 <ul>
     <?php foreach ($tags as $tag): ?>
