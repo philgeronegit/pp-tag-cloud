@@ -9,7 +9,7 @@ class TagController extends BaseController
     }
 
     public function index(): array {
-        $this->setView(__DIR__ . '/../views/tags/index.php');
+        $this->setView(BASE_PATH . '/views/tags/index.php');
         return ['tags' => [
             ['id' => 1, 'text' => 'Tag 1'],
             ['id' => 2, 'text' => 'Tag 2']
@@ -17,7 +17,7 @@ class TagController extends BaseController
     }
 
     public function show($id): array {
-        $this->setView(__DIR__ . '/../views/tags/show.php');
+        $this->setView(BASE_PATH . '/views/tags/show.php');
         return ['tag' => ['id' => $id, 'text' => "Un Tag avec l'ID $id"]];
     }
 }

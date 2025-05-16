@@ -8,7 +8,7 @@ class NoteController extends BaseController {
     }
 
     protected function index(): array {
-      $this->setView(__DIR__ . '/../views/notes/index.php');
+      $this->setView(BASE_PATH . '/views/notes/index.php');
       return ['notes' => [
         ['id' => 1, 'text' => 'Note 1'],
         ['id' => 2, 'text' => 'Note 2']
@@ -16,7 +16,7 @@ class NoteController extends BaseController {
     }
 
     protected function show($id): array {
-        $this->setView(__DIR__ . '/../views/notes/show.php');
+        $this->setView(BASE_PATH . '/views/notes/show.php');
         return ['note' => ['id' => $id, 'text' => "Une Note avec l'ID $id"]];
     }
 }
