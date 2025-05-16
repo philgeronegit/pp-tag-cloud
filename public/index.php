@@ -2,7 +2,12 @@
 
 include '../bootstrap.php';
 
-function my_extract(array $data) {
+/**
+ * Extracts array data into the global scope.
+ *
+ * @param array<string, mixed> $data
+ */
+function my_extract(array $data): void {
   foreach ($data as $key => $value) {
       $GLOBALS[$key] = $value;
   }

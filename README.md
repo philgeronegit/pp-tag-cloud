@@ -17,7 +17,7 @@
   vendor/bin/phpstan analyse app public bootstrap.php --level=0
   ```
 
-- [ ] Corrigez toutes les erreurs détectées par PHPStan
-- [ ] Lancer une analyse au niveau suivant jusqu’au niveau 5 en corrigeant à chaque fois.
-- [ ] Ajoutez des commentaires PHPDoc appropriés à toutes les classes, méthodes et propriétés
-- [ ] Confi gurez PHPStan avec un niveau minimal de 6
+- [x] Corrigez toutes les erreurs détectées par PHPStan
+- [x] Lancer une analyse au niveau suivant jusqu’au niveau 5 en corrigeant à chaque fois.
+- [x] Ajoutez des commentaires PHPDoc appropriés à toutes les classes, méthodes et propriétés
+- [x] Confi gurez PHPStan avec un niveau minimal de 6
