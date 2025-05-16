@@ -1,4 +1,4 @@
-import MyTag from "../components/MyTag.vue";
+import MyTag from "../components/MyTag";
 
 export default {
   title: "TAGS/MyTag",
@@ -33,6 +33,6 @@ ClickableTag.args = {
 };
 ClickableTag.parameters = {
   docs: {
-    storyDescription: 'This tag is clickable. Listen to the `click` event.'
+    storyDescription: "This tag is clickable. Listen to the `click` event."
   }
 };
