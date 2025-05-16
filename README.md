@@ -11,7 +11,12 @@
 ### 1.2 Mise en place de PHPStan
 
 - [x] Installez PHPStan via Composer
-- [ ] Lancer une analyse PHPStan du niveau 0
+- [x] Lancer une analyse PHPStan du niveau 0
+
+  ```bash
+  vendor/bin/phpstan analyse app public bootstrap.php --level=0
+  ```
+
 - [ ] Corrigez toutes les erreurs détectées par PHPStan
 - [ ] Lancer une analyse au niveau suivant jusqu’au niveau 5 en corrigeant à chaque fois.
 - [ ] Ajoutez des commentaires PHPDoc appropriés à toutes les classes, méthodes et propriétés
