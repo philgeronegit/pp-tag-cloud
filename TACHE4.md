@@ -45,3 +45,54 @@ Que définit l'option empty OutDir ?
 Que se passe-t-il si on ne définit pas Entry File Names ?
 
 > Les chunks créés lors du bundle vont avoir un nom du type "[name].js"
+
+## TODO 4.6
+
+Charger le JS via un <script> (comme un widget) Dans … /views/template.php
+
+## TODO 4.7
+
+Inclure le fichier template depuis le fichier index.php et vérifier que cela fonctionne.
+Lancer le php depuis public/
+
+```bash
+php -S localhost:8000
+```
+
+### Question 5.1
+
+Pourquoi le style est visible dans le storyBook mais pas dans l’application ?
+
+> Le style n'est pas visible dans l'application car il faut importer dans template.php le css généré par vite dans le répertoire "dist".
+
+## TODO 5.2
+
+Ajoutez le style CSS du composant.
+
+```html
+<link href="./dist/assets/main-C17_uefF.css" rel="stylesheet" />
+```
+
+## TODO 6
+
+Intégrer trois composants tag de votre composition avec des couleurs différentes.
+
+```html
+<div class="mon-tag" data-color="blue">Tag A</div>
+<div class="mon-tag" data-color="green">Tag B</div>
+<div class="mon-tag" data-color="red">Tag C</div>
+```
+
+```js
+const myTags = document.querySelectorAll(".mon-tag");
+if (myTags.length > 0) {
+  console.log("Mounting <MyTag> component");
+  myTags.forEach((tag) => {
+    const label = tag.innerText;
+    createApp(MyTag, {
+      label: label || "Tag par défaut",
+      color: tag.dataset.color
+    }).mount(tag);
+  });
+}
+```
