@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn', variant]">
+  <button :class="['btn', variant]" @click="$emit('click')">
     <slot>{{ label }}</slot>
   </button>
 </template>

@@ -1,5 +1,12 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import MyButton from "./components/MyButton";
+import "./style.css";
 
-createApp(App).mount('#app')
+const myButton = document.getElementById("mon-bouton");
+if (myButton) {
+  console.log("Mounting <MyButton> component");
+  createApp(MyButton, {
+    label: myButton.dataset.label || "Bouton par défaut",
+    onClick: () => console.log("Button was clicked")
+  }).mount("#mon-bouton");
+}

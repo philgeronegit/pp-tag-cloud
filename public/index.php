@@ -1,6 +1,7 @@
 <?php
 
 include '../bootstrap.php';
+include __DIR__ . '/../app/views/template.php';
 
 /**
  * Extracts array data into the global scope.
