@@ -1,7 +1,7 @@
 <?php
 
 include '../bootstrap.php';
-include __DIR__ . '/../app/views/template.php';
+//include __DIR__ . '/../app/views/template.php';
 
 /**
  * Extracts array data into the global scope.
@@ -41,6 +41,6 @@ $data = $controller->run($id);
 extract($data);
 
 // Include layout
-include "template/header.php";
+include(__DIR__.'/../app/views/template/header.php');
 include $controller->getView();
-include "template/footer.php";
+include(__DIR__.'/../app/views/template/footer.php');

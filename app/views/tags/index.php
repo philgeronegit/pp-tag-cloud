@@ -11,4 +11,9 @@ global $tags;
           </a>
         </li>
     <?php endforeach; ?>
+
+    <div class="mon-tag" data-color="blue">Tag A</div>
+    <div class="mon-tag" data-color="green">Tag B</div>
+    <div class="mon-tag" data-color="red">Tag C</div>
+
 </ul>
